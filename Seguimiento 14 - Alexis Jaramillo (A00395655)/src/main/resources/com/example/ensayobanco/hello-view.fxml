@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<?import javafx.collections.FXCollections?>
+<?import java.lang.String?>
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
+            prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.example.ensayobanco.HelloController">
+    <Label layoutX="42.0" layoutY="39.0" text="Fecha:"/>
+    <DatePicker fx:id="datePicker" layoutX="96.0" layoutY="34.0" prefWidth="200.0"/>
+    <Label layoutX="330.0" layoutY="39.0" text="Descripción:"/>
+    <TextField fx:id="descriptionField" layoutX="408.0" layoutY="34.0" prefWidth="162.0"/>
+    <Label layoutX="42.0" layoutY="81.0" text="Tipo:"/>
+    <ChoiceBox fx:id="typeChoiceBox" layoutX="96.0" layoutY="76.0" prefWidth="150.0">
+        <items>
+            <FXCollections fx:factory="observableArrayList">
+                <String fx:value="Ingreso"/>
+                <String fx:value="Gasto"/>
+            </FXCollections>
+        </items>
+    </ChoiceBox>
+    <Label layoutX="330.0" layoutY="81.0" text="Monto:"/>
+    <TextField fx:id="amountField" layoutX="408.0" layoutY="76.0" prefWidth="162.0"/>
+    <Button fx:id="addButton" layoutX="504.0" layoutY="120.0" mnemonicParsing="false" onAction="#handleAddButton"
+            text="Agregar"/>
+    <Button fx:id="deleteButton" layoutX="420.0" layoutY="349.0" mnemonicParsing="false" onAction="#handleDeleteButton"
+            text="Eliminar"/>
+    <Label fx:id="balanceLabel" layoutX="42.0" layoutY="349.0" text="Balance: $"/>
+    <TableView fx:id="incomeExpenseTableView" layoutX="42.0" layoutY="158.0" prefHeight="173.0" prefWidth="528.0">
+        <columns>
+            <TableColumn fx:id="dateColumn" prefWidth="150.0" text="Fecha"/>
+            <TableColumn fx:id="descriptionColumn" prefWidth="150.0" text="Descripción"/>
+            <TableColumn fx:id="typeColumn" prefWidth="75.0" text="Tipo"/>
+            <TableColumn fx:id="amountColumn" prefWidth="150.0" text="Monto"/>
+        </columns>
+    </TableView>
+    <Button fx:id="showIncomesButton" layoutX="42.0" layoutY="120.0" mnemonicParsing="false"
+            onAction="#handleShowIncomesButton" text="Mostrar Ingresos"/>
+    <Button fx:id="showExpensesButton" layoutX="167.0" layoutY="120.0" mnemonicParsing="false"
+            onAction="#handleShowExpensesButton" text="Mostrar Gastos"/>
+    <Button fx:id="showAllButton" layoutX="292.0" layoutY="120.0" mnemonicParsing="false"
+            onAction="#handleShowAllButton" text="Mostrar Todo"/>
+    <Label fx:id="totalIncomesLabel" layoutX="42.0" layoutY="334.0" text="Total Ingresos: $"/>
+    <Label fx:id="totalExpensesLabel" layoutX="253.0" layoutY="334.0" text="Total Gastos: $"/>
+    <Label fx:id="totalBalanceLabel" layoutX="464.0" layoutY="334.0" text="Balance Total: $"/>
+</AnchorPane>
+
+
+
